@@ -230,4 +230,5 @@ export const chipsInputDefaultProps: ChipsInputProps<any> = {
 };
 ChipsInput.defaultProps = chipsInputDefaultProps;
 
+// eslint-disable-next-line import/no-default-export
 export default ChipsInput;

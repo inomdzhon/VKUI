@@ -617,6 +617,7 @@ class View extends React.Component<ViewProps & DOMProps, ViewState> {
   }
 }
 
+// eslint-disable-next-line import/no-default-export
 export default withContext(
   withContext(
     withContext(

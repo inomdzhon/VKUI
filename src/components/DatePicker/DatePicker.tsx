@@ -237,6 +237,7 @@ DatePicker.defaultProps = {
   max: { day: 31, month: 12, year: 2100 },
 };
 
+// eslint-disable-next-line import/no-default-export
 export default withAdaptivity(DatePicker, {
   hasMouse: true,
 });

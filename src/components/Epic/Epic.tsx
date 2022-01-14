@@ -51,6 +51,7 @@ export const Epic: React.FC<EpicProps> = (props: EpicProps) => {
   );
 };
 
+// eslint-disable-next-line import/no-default-export
 export default withAdaptivity(Epic, {
   viewWidth: true,
 });

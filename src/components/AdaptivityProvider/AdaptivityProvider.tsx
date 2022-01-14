@@ -21,6 +21,7 @@ export const MOBILE_SIZE = 320;
 export const MOBILE_LANDSCAPE_HEIGHT = 414;
 export const MEDIUM_HEIGHT = 720;
 
+// eslint-disable-next-line import/no-default-export
 export default function AdaptivityProvider(props: AdaptivityProviderProps) {
   const adaptivityRef = React.useRef<AdaptivityContextInterface>(null);
   const [, updateAdaptivity] = React.useState({});

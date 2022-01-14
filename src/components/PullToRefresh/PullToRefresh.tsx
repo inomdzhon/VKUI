@@ -339,6 +339,7 @@ class PullToRefresh extends React.PureComponent<
   }
 }
 
+// eslint-disable-next-line import/no-default-export
 export default withContext(
   withPlatform(withDOM<PullToRefreshProps>(PullToRefresh)),
   ScrollContext,

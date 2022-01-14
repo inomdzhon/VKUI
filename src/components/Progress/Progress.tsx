@@ -49,4 +49,5 @@ Progress.defaultProps = {
   value: 0,
 };
 
+// eslint-disable-next-line import/no-default-export
 export default Progress;

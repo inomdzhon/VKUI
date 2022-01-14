@@ -105,4 +105,5 @@ const ConfigProvider: React.FC<ConfigProviderProps> = ({
 // https://github.com/styleguidist/react-docgen-typescript/issues/195
 ConfigProvider.defaultProps = { ...defaultConfigProviderProps };
 
+// eslint-disable-next-line import/no-default-export
 export default ConfigProvider;

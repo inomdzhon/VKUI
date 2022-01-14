@@ -197,6 +197,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({
   );
 };
 
+// eslint-disable-next-line import/no-default-export
 export default withAdaptivity(HorizontalScroll, {
   hasMouse: true,
 });

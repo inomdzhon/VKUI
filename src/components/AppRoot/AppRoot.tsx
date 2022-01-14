@@ -208,4 +208,5 @@ export const AppRoot: React.FC<AppRootProps> = withAdaptivity(
   }
 );
 
+// eslint-disable-next-line import/no-default-export
 export default AppRoot;

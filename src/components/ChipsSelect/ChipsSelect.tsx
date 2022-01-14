@@ -425,4 +425,5 @@ const chipsSelectDefaultProps: ChipsSelectProps<any> = {
 
 ChipsSelect.defaultProps = chipsSelectDefaultProps;
 
+// eslint-disable-next-line import/no-default-export
 export default withAdaptivity(ChipsSelect, { sizeY: true });
