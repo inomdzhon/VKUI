@@ -90,6 +90,12 @@ function prettyProps(props: any) {
       ) {
         return `${prop}=<jsx>`;
       }
+      if (prop === "src") {
+        const _value = Array.isArray(value)
+          ? JSON.stringify(value.map(() => "{url}"))
+          : `"{url}"`;
+        return `${prop}=${_value}`;
+      }
       return `${prop}=${JSON.stringify(value)}`;
     })
     .join(" ");
