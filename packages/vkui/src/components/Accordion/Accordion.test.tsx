@@ -3,10 +3,5 @@ import { baselineComponent } from '../../testing/utils';
 import { Accordion } from './Accordion';
 
 describe('Accordion', () => {
-  baselineComponent((props) => (
-    <Accordion {...props}>
-      <Accordion.Summary>Title</Accordion.Summary>
-      Content
-    </Accordion>
-  ));
+  baselineComponent((props) => <Accordion {...props}>Content</Accordion>);
 });
