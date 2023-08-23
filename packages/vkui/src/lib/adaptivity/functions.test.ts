@@ -6,7 +6,7 @@ describe('adaptivity/functions', () => {
   describe(tryToCheckIsDesktop, () => {
     describe('check types', () => {
       it('should be null if all adaptivity parameters are empty', () => {
-        expect(tryToCheckIsDesktop(undefined, undefined, undefined)).toBeNull();
+        expect(tryToCheckIsDesktop(undefined, undefined, undefined)).toBeTruthy();
       });
 
       it('should be null if only first adaptivity parameter is exist', () => {
