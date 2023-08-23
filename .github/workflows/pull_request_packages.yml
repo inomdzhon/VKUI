@@ -84,7 +84,7 @@ jobs:
     uses: ./.github/workflows/reusable_workflow_test.yml
 
   test_report:
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (success() || failure()) }}
     needs: test
     runs-on: ubuntu-latest
     name: Report unit test results
@@ -104,7 +104,7 @@ jobs:
     uses: ./.github/workflows/reusable_workflow_test_e2e.yml
 
   test_e2e_prepare_and_upload_report:
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (success() || failure()) }}
     needs: test_e2e
     name: Prepare and upload e2e's HTML report artifact
     runs-on: ubuntu-latest

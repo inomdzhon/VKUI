@@ -27,7 +27,7 @@ jobs:
       workspace: '@vkontakte/vkui'
 
   deploy_test_coverage:
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && (success() || failure()) }}
     needs: test
     runs-on: ubuntu-latest
     name: Deploy test coverage
