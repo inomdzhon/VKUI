@@ -1,4 +1,8 @@
 /* stylelint-disable @project-tools/stylelint-atomic */
+.AccordionSummary {
+  background-color: #f5f5f5;
+}
+
 .AccordionSummary::-webkit-details-marker {
   display: none;
 }
