@@ -22,6 +22,10 @@ on:
         description: "package's version (without 'v'):"
         required: true
         type: string
+      is_prerelease:
+        description: 'unselect if it is stable release (⚠️ make sure this is the case)'
+        default: true
+        type: boolean
 
 jobs:
   payload:
@@ -36,6 +40,7 @@ jobs:
         id: artifact
         uses: actions/download-artifact@v4
         with:
+          github-token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
           name: publish_workflow_payload
           run-id: ${{ github.event.workflow_run.id }}
 
@@ -65,13 +70,13 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Creating docs for pre-release
-        if: ${{ github.event.workflow_run.name == 'Publish pre-release' }}
+        if: ${{ github.event.workflow_run.name == 'Publish pre-release' || inputs.is_prerelease == 'true' }}
         run: |
           yarn run docs:styleguide:build --dist dist/${{ needs.payload.outputs.next_version }}
           yarn run docs:storybook:build -o ../../styleguide/dist/${{ needs.payload.outputs.next_version }}/playground
 
       - name: Creating docs for release
-        if: ${{ github.event.workflow_run.name == 'Publish release' }}
+        if: ${{ github.event.workflow_run.name == 'Publish release' || inputs.is_prerelease != 'true' }}
         run: |
           yarn run docs:styleguide:build --dist dist
           yarn run docs:storybook:build -o ../../styleguide/dist/playground
