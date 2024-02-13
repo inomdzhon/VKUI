@@ -53,10 +53,7 @@ runs:
       shell: bash
 
     - name: Publishing release
-      run: |
-        npm publish artifact.tgz --tag ${{ inputs.npm_tag }}
-      env:
-        NODE_AUTH_TOKEN: ${{ inputs.npm_token }}
+      run: echo ${{ inputs.npm_tag }}
       shell: bash
 
     - name: Pushing changes

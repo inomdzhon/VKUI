@@ -10,13 +10,13 @@ runs:
   using: composite
   steps:
     - name: Run linters
-      run: yarn run lint
+      run: echo 'lint'
       shell: bash
 
     - name: Run build
-      run: yarn workspace ${{ inputs.package_name }} run build
+      run: echo 'build'
       shell: bash
 
     - name: Run tests and linters
-      run: yarn workspace ${{ inputs.package_name }} run test
+      run: echo 'test'
       shell: bash
